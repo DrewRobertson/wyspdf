@@ -1,0 +1,81 @@
+:root {
+  --ve-border: #d0d7de;
+  --ve-bg: #fff;
+  --ve-toolbar-bg: #f6f8fa;
+  --ve-focus: #0969da;
+}
+
+.ve-wrapper {
+  border: 1px solid var(--ve-border);
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--ve-bg);
+}
+
+.ve-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  background: var(--ve-toolbar-bg);
+  border-bottom: 1px solid var(--ve-border);
+}
+
+.ve-btn {
+  border: 1px solid var(--ve-border);
+  background: #fff;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.ve-btn:focus {
+  outline: 2px solid var(--ve-focus);
+  outline-offset: 1px;
+}
+
+.ve-btn.is-active {
+  background: #e8f0fe;
+  border-color: var(--ve-focus);
+}
+
+.ve-body {
+  min-height: 200px;
+}
+
+.ve-view {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+.ve-view-wysiwyg {
+  border-bottom: 1px solid var(--ve-border);
+}
+
+.ve-view-source {
+  font-family: ui-monospace, SFMono-Regular, SFMono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  border-bottom: 1px solid var(--ve-border);
+}
+
+.ve-statusbar {
+  padding: 8px;
+  font-size: 12px;
+  color: #57606a;
+}
+
+.ve-char-count {
+  float: right;
+}
+
+.ve-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

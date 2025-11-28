@@ -1,4 +1,4 @@
-import { createElement, generateName, debounce } from './utils.js';
+import { createElement, generateName, debounce, setVisible } from './utils.js';
 import { SelectionManager } from './selection.js';
 import { CommandRegistry } from './commands.js';
 import { ModeManager } from './modes.js';

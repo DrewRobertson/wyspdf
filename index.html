@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VanillaEditor Demo</title>
+  <link rel="stylesheet" href="styles/editor.css">
+  <script src="vendor/html-formatter.min.js"></script>
+</head>
+<body>
+  <h1>VanillaEditor Demo</h1>
+  <form id="demo-form">
+    <h2>Textarea-backed editor</h2>
+    <textarea id="textarea-target" name="article">&lt;p&gt;Hello world&lt;/p&gt;</textarea>
+    <div id="textarea-editor"></div>
+
+    <h2>Div-backed editor</h2>
+    <div id="div-target" data-name="content">
+      <p>This editor was initialized from a div.</p>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <pre id="log"></pre>
+
+  <script type="module">
+    import { VanillaEditor } from './src/editor-core.js';
+
+    const textareaEl = document.getElementById('textarea-target');
+    new VanillaEditor(textareaEl);
+
+    const divEl = document.getElementById('div-target');
+    new VanillaEditor(divEl);
+
+    document.getElementById('demo-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const obj = {};
+      data.forEach((value, key) => { obj[key] = value; });
+      document.getElementById('log').textContent = JSON.stringify(obj, null, 2);
+    });
+  </script>
+</body>
+</html>
